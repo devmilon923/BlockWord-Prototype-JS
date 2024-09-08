@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlockWord Prototype | Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="lg:w-2/6 mx-auto mt-12 p-2">
+      <h1 class="text-3xl mb-3 font-semibold text-slate-800">
+        BlockWord Prototype
+      </h1>
+      <p class="text-gray-500 mb-3">
+        BlockWord Prototype is a browser-based demo that illustrates how a
+        message filtering system works. Using local storage, it simulates
+        blocking messages with predefined prohibited words on both the sender's
+        and receiver's ends. This prototype demonstrates the core functionality
+        of content moderation by showing how messages containing blocked words
+        are automatically filtered out, showcasing the principles of content
+        control and local storage application.
+      </p>
+      <div id="" class="bg-gray-200 p-4 mb-4 rounded-md">
+        <div id="notice" class="text-amber-800">No message found</div>
+        <ul id="chatBox"></ul>
+      </div>
+      <div class="m-auto gap-6 flex justify-evenly mb-12">
+        <input
+          id="input"
+          type="text"
+          placeholder="Message..."
+          class="flex-1 input input-bordered w-full"
+        />
+        <div class="">
+          <button
+            id="send"
+            class="btn bg-slate-800 text-white hover:bg-slate-950"
+          >
+            Send Message
+          </button>
+        </div>
+      </div>
+      <hr />
+      <hr />
+     
+      <div class="mx-auto my-12 flex flex-col-reverse justify-between gap-6">
+
+       <div>
+        <div id="blockNotice" class="mb-3 text-amber-800"></div>
+        <input
+          id="blockInput"
+          type="text"
+          placeholder="Add Block Message"
+          class="flex-1 input input-bordered w-full"
+        />
+        <div class="flex justify-center mt-3">
+          <button
+            id="blockBtn"
+            class="btn bg-amber-700 text-white hover:bg-amber-950"
+          >
+            Add Message
+          </button>
+        </div>
+       </div>
+        <ul
+          class="menu bg-base-200 rounded-md w-full mx-auto mt-3"
+          id="block-list"
+        ></ul>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
