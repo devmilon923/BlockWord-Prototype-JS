@@ -51,7 +51,6 @@ function detectBlockMsg(array) {
       }
     }
     return true;
-
   } else {
     return true;
   }
@@ -105,24 +104,22 @@ blockBtn.addEventListener("click", function () {
     blockMessage = GetBlockMessageToLocalStorage();
     blockMessage.push(blockInput.value);
     SetBlockMessageToLocalStorage(blockMessage);
-    const ulB = document.getElementById("block-list");
-    const liB = document.createElement("li");
-    liB.className = "hover:bg-red-800 p-2 rounded-md cursor-pointer bg-red-400 text-white";
-    // const p = document.createElement("p");
-    // p.className = "chat-bubble";
-    liB.textContent = blockInput.value;
-    // li.appendChild(p);
-    ulB.appendChild(liB);
-    // blockInput.value = "";
-    //  notice.innerText=''
+    const ul = document.getElementById("block-list");
+    const li = document.createElement("li");
+    li.className =
+      "hover:bg-red-800 p-2 my-1 text-center cursor-pointer bg-red-400 text-white";
+
+    li.textContent = blockInput.value;
+
+    ul.appendChild(li);
+
     blockNotice.innerText = "";
     blockInput.value = "";
     setInterval(() => {
       blockNotice.innerText = "";
-    }, 2000);
+    }, 3000);
   } else {
     blockNotice.innerText = "Empty message not add";
-    // notice.innerText='Empty message not send...'
   }
 });
 let blockData = GetBlockMessageToLocalStorage();
@@ -130,7 +127,8 @@ for (let data of blockData) {
   const ul = document.getElementById("block-list");
   const li = document.createElement("li");
 
-  li.className = "m-2";
+  li.className =
+    "hover:bg-gray-200 p-2 rounded-full my-1 text-center cursor-pointer bg-white";
   li.textContent = data;
 
   ul.appendChild(li);
