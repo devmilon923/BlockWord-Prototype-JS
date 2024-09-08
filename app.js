@@ -102,7 +102,7 @@ for (let data of datas) {
 blockBtn.addEventListener("click", function () {
   if (blockInput.value !== "") {
     blockMessage = GetBlockMessageToLocalStorage();
-    blockMessage.push(blockInput.value);
+    blockMessage.push(blockInput.value.toLowerCase());
     SetBlockMessageToLocalStorage(blockMessage);
     const ul = document.getElementById("block-list");
     const li = document.createElement("li");
