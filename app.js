@@ -67,7 +67,7 @@ sendBtn.addEventListener("click", function () {
 
     if (detectBlockMsg(blockList) === true) {
       inputMessage = GetMessageToLocalStorage();
-      inputMessage.push(sendMessage.value);
+      inputMessage.push(sendMessage.value.toLowerCase());
       SetMessageToLocalStorage(inputMessage);
       const ul = document.getElementById("chatBox");
       const li = document.createElement("li");
